@@ -10,14 +10,19 @@ const transport = createTransport(
 )
 
 export async function sendMail (req, res, next) {
-  const { who, message } = req.body
+  const { name, email, message } = req.body
 
   const result = await transport.sendMail({
     from: 'smguastavino@gmail.com',
     to: 'smguastavino@gmail.com',
     subject: 'hello',
     html: `
-      <span>from:</span><strong>${who}</strong></br>
+      <span>from: </span>
+      <strong>${name}</strong>
+      <br>
+      <span>email: </span>
+      <strong>${email}</strong>
+      <br>
       <p>${message}</p>
     `
   })
