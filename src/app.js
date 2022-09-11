@@ -3,15 +3,16 @@ import 'dotenv/config'
 import cors from 'cors'
 
 import mailerRouter from './routes/mailer.js'
-import loggerMiddleware from './middlewares/logMiddleware.js'
 
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
-app.use(loggerMiddleware)
 app.use('/mailer', mailerRouter)
+app.use('/', (req, res, next) => {
+  res.status(200).json({ message: 'awoken' })
+})
 
 app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message })

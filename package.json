@@ -5,8 +5,8 @@
   "main": "./src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon",
-    "start": "cross-env NODE_ENV=production node ./src/app.js",
+    "dev": "NODE_ENV=development nodemon",
+    "start": "NODE_ENV=production node ./src/app.js",
     "lint": "eslint . --fix"
   },
   "keywords": [],
@@ -20,7 +20,6 @@
     "nodemailer-sendgrid": "^1.0.3"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
     "eslint": "^8.17.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
