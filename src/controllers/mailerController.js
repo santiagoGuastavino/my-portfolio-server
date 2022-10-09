@@ -10,6 +10,8 @@ const transport = createTransport(
 )
 
 export async function sendMail (req, res, next) {
+  console.log('Sending e-mail')
+
   const { name, email, message } = req.body
 
   const result = await transport.sendMail({

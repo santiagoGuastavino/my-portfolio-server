@@ -11,7 +11,8 @@ app.use(cors())
 
 app.use('/mailer', mailerRouter)
 app.use('/', (req, res, next) => {
-  res.status(200).json({ message: 'awoken' })
+  console.log('Server ready to accept requests')
+  res.status(204).send()
 })
 
 app.use((err, req, res, next) => {
