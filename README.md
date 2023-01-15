@@ -10,7 +10,7 @@ I achieved this with a Gmail account and [nodemailer](https://www.npmjs.com/pack
 #### Project dependencies:
 - [Node.js](https://nodejs.org)
 - [Nest.js](https://nestjs.com/)
-  - [nodemailer](https://www.npmjs.com/package/nodemailer)
+- [nodemailer](https://www.npmjs.com/package/nodemailer)
 
 #### Development dependencies:
 - [ESLint](https://www.npmjs.com/package/eslint)
