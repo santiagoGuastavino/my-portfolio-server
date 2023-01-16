@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
-import { MailerModule } from './mailer/mailer.module';
+import { MailerModule } from './resources/mailer/mailer.module';
 
 @Module({
   controllers: [AppController],

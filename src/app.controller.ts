@@ -5,7 +5,7 @@ export class AppController {
   @Get()
   @HttpCode(HttpStatus.OK)
   wake(): void {
-    Logger.log('Server ready to accept requests');
+    Logger.log('Server ready to accept requests', 'Server');
     return;
   }
 }
