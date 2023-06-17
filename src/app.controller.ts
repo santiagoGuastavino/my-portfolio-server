@@ -1,11 +1,15 @@
-import { Controller, Get, HttpCode, HttpStatus, Logger } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus } from '@nestjs/common';
+import { ResponseDto } from './common/dtos/response.dto';
+import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
+  constructor(private readonly appService: AppService) {}
+
   @Get()
   @HttpCode(HttpStatus.OK)
-  wake(): void {
-    Logger.log('Server ready to accept requests', 'Server');
-    return;
+  wakeUp(): ResponseDto<object> {
+    const response: ResponseDto<object> = this.appService.wakeUp();
+    return response;
   }
 }

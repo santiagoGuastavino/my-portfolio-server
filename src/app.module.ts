@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { MailerModule } from './resources/mailer/mailer.module';
+import { AppService } from './app.service';
 
 @Module({
   controllers: [AppController],
+  providers: [AppService],
   imports: [ConfigModule.forRoot(), MailerModule],
 })
 export class AppModule {}
