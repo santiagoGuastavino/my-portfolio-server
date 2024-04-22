@@ -4,8 +4,11 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 import { createTransport } from 'nodemailer';
-import { ResponseDto, ResponseMessage } from 'src/common/dtos/response.dto';
-import { SendEmailDto } from './dtos/send-email.dto';
+import {
+  ResponseDto,
+  ResponseMessage,
+  SendEmailDto,
+} from 'src/Aplication/dtos';
 
 interface MailData {
   from: string;
@@ -15,7 +18,7 @@ interface MailData {
 }
 
 @Injectable()
-export class MailerService {
+export class MailerUseCase {
   public async sendContactEmail(
     payload: SendEmailDto,
   ): Promise<ResponseDto<object>> {
