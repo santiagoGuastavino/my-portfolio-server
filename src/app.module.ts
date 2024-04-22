@@ -1,7 +1,8 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MailerController, WakeController } from './Infrastructure/controllers';
 import { MailerUseCase, WakeUseCase } from './Aplication/use-cases';
+import { LoggerMiddleware } from './Infrastructure/middleware';
 
 @Module({
   imports: [
@@ -12,4 +13,8 @@ import { MailerUseCase, WakeUseCase } from './Aplication/use-cases';
   controllers: [WakeController, MailerController],
   providers: [WakeUseCase, MailerUseCase],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LoggerMiddleware).forRoutes('*');
+  }
+}
