@@ -3,10 +3,11 @@ import { HttpStatus } from '@nestjs/common';
 export enum ResponseMessage {
   OK = 'Ok',
   CREATED = 'Created',
-  BAD_REQUEST = 'Bad Request',
+  BAD_REQUEST = 'Bad request',
   FORBIDDEN = 'Forbidden',
-  NOT_FOUND = 'Not Found',
+  NOT_FOUND = 'Not found',
   CONFLICT = 'Conflict',
+  TOO_MANY_REQUESTS = 'Too many requests',
 }
 
 export class ResponseDto<T> {
